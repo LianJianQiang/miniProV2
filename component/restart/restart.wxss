@@ -1,0 +1,19 @@
+.restart{
+    position: fixed;
+    top: 30rpx;
+    right: 30rpx;
+    z-index: 1000;
+    width: 100rpx;
+    height:100rpx;
+    line-height: 34rpx;
+    padding-top:18rpx;
+    box-sizing: border-box;
+    background:#41B8B0;
+    border-radius: 50%;
+    overflow: hidden;
+    color:#fff;
+    font-size:28rpx;
+    text-align:center;
+    opacity: 0.7;
+    box-shadow: rgba(0,0,0,0.08) 0 4rpx 8rpx 0;
+}

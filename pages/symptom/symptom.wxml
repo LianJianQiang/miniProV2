@@ -1,0 +1,58 @@
+<view class="container pad">
+  <import src="../../component/restart/restart.wxml" />
+  <template is="restart"></template>
+
+  <!--搜索-->
+  <import src="../../component/search/search.wxml" />
+  <template is="search" data="{{searchList:searchList,searchValue:searchValue}}"></template>
+  <!--搜索完-->
+
+  <!--内容区-->
+  <view class="cont">
+
+    <!--左侧tab-->
+    <scroll-view class="leftTab" scroll-y>
+      <view class="list {{currentTab==item.id?'active':''}}" wx:for="{{tab}}" wx:key="id" bindtap="clickTabList" data-id="{{item.id}}">
+        {{item.text}}
+        <view class="rightBorder"></view>
+      </view>
+    </scroll-view>
+
+    <!--右侧content-->
+    <scroll-view scroll-y class="rightCont clearfix">
+
+      <view class="tag fll " wx:for="{{tag}}" wx:key="index" data-id="{{item.id}}" bindtap="clickTag">
+        <view class="{{item.choice?'active':''}}">
+          {{item.text}}
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <!--内容区完-->
+
+  <!--footer-->
+  <view class="footer">
+    <view class="cart" bindtap="cart">
+      已选择
+      <text>{{tagChoice.length}}</text>
+      个症状
+    </view>
+    <view class="sure" bindtap="sure">
+      确定
+    </view>
+  </view>
+  <!--footer完-->
+
+  <!--modal-->
+  <view class="modal">
+    <view class="mask {{mask?'show':''}}" catchtap="clickMask" style="display:{{mask?'block':'none'}}">
+      <scroll-view class="cont clearfix {{mask?'show':''}}" catchtap="clickContBox" scroll-y>
+        <view class="choice fll" catchtap="deleteChoice" wx:for="{{tagChoice}}" wx:key="index" data-idx="{{index}}">
+          {{item.text}} x
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!--modal完-->
+</view>

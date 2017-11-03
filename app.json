@@ -1,0 +1,14 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/wiki/wiki",
+        "pages/report/report",
+        "pages/symptom/symptom"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "智慧诊疗",
+        "navigationBarTextStyle": "black"
+    }
+}

@@ -1,0 +1,14 @@
+<template name="search">
+
+  <view class="search">
+    <text class="icommon icon-search"></text>
+    <input type="text" placeholder="请输入症状..." value="{{searchValue}}" bindinput="searchChange" />
+  </view>
+  <view class="mask" style="display:{{searchList.length>0?'block':'none'}}">
+    <scroll-view scroll-y>
+      <view class="searchLi" wx:for="{{searchList}}" wx:key="id" bindtap="clickSearckList" data-id="{{item.id}}" data-name="{{item.name}}">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+</template>

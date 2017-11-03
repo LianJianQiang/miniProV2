@@ -1,0 +1,30 @@
+@import "../../component/restart/restart.wxss";
+.pad40{
+  padding:0 40rpx;
+  text-align: justify;
+}
+.list{
+  border-bottom:1rpx dotted #eaeaea;
+}
+.list .title{
+  height:98rpx;
+  line-height: 98rpx;
+  font-size:34rpx;
+  color:#2A3F54;
+  display: flex;
+  flex-direction: row;
+   justify-content:space-between;
+}
+
+.list .title .icon{
+  color:rgba(42,63,84,0.3);
+}
+
+.list .describe{
+  line-height:40rpx;
+  padding-bottom:20rpx;
+  font-size:28rpx;
+  color:rgba(42,63,84,0.8);
+  overflow: hidden;
+
+}

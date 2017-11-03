@@ -1,0 +1,70 @@
+<template name="dialogue">
+  <view wx:if="{{idx==index || idx==index+1}}" class="dialogue {{idx==index?'question-show':'question-hide'}}" >
+
+  <!--<view class="dialogue {{index==idx?'question-show':'question-move'}} {{idx-index>=1||idx<index?'question-hide':''}}">-->
+
+    <template is='question' data="{{items,idx,index,hasHeader:true}}"></template>
+
+    <view class="labItem" wx:if="{{labItem.length>0}}" style="padding-bottom:100rpx">
+      <view wx:for="{{labItem}}" wx:key="{{index}}" wx:for-item="items">
+        <template is='question' data="{{items,hasHeader:false}}"></template>
+      </view>
+      <button class='submitLab' type="default" size="{{defaultSize}}" plain="{{plain}}" bindtap="clickSubmitLab"> 确定 </button>
+    </view>
+    
+  </view>
+</template>
+
+<template name='question'>
+
+  <view style="padding:0 10rpx">
+    <!--headerImage-->
+    <view class="robot" wx:if="{{hasHeader}}">
+      <image class="robot-photo" src="../../images/robot.jpg" background-size="cover"></image>
+    </view>
+    <!--headerImage完-->
+
+    <!--题干-->
+    <view class="stem">
+      {{items.stem}}
+    </view>
+    <!--题干完-->
+
+    <!--options-->
+    <view class="options">
+
+      <!--单选-->
+      <radio-group wx:if="{{items.type=='radio'}}" class="radio-group" bindchange="inputChange" data-type="radio" data-name="{{items.name}}" data-id="{{items.id}}">
+        <label class="radio" wx:for="{{items.options}}" wx:key="value" wx:for-item="radioItems">
+          <radio value="{{radioItems.value}}" color="#41B8B0" /> 
+          {{radioItems.text}}
+        </label>
+      </radio-group>
+
+      <!--多选-->
+      <checkbox-group bindchange="checkboxChange" wx:if="{{items.type=='checkbox'}}">
+        <label class="checkbox" wx:for="{{items.options}}" wx:key="value" wx:for-item="checkboxItems">
+          <checkbox value="{{checkboxItems.value}}" />{{checkboxItems.text}}
+        </label>
+      </checkbox-group>
+
+
+      <!--文本输入-->
+      <input wx:if="{{items.type=='text'}}" type="number" placeholder="请输入年龄(岁)" maxlength="2" minlength="1" bindchange="inputChange" data-name="{{items.name}}" />
+
+      <!--连接-->
+      <view wx:if="{{items.type=='list'}}" class="symptom-enter">
+        <navigator url="{{items.url}}">
+          {{items.text}}
+          <text class="icommon icon-putaway"></text>
+        </navigator>
+      </view>
+
+    </view>
+    <!--options完-->
+
+  </view>
+
+  <button class="checkboxBtn" type="default" size="{{defaultSize}}" bindtap="clickCheckboxBtn" data-name="{{items.name}}" data-type="checkbox" style="display:{{items.type=='checkbox'&& index==idx?'block':'none'}}">确定</button>
+
+</template>

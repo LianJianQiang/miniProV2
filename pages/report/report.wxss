@@ -1,0 +1,100 @@
+
+@import "../../component/restart/restart.wxss";
+.pad40{
+  padding:0 40rpx;
+}
+.header{
+  padding-bottom:36rpx;
+  border-bottom:1rpx dotted rgba(42,63,84,.3)
+}
+
+.header .robot{
+  width:108rpx;
+  height:108rpx;
+  margin:42rpx auto 26rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header .robot .robot-photo{
+  width:100%;
+  height:100%;
+}
+.header .text{
+  width:100%;
+  text-align: center;
+  color:#3D83B8;
+  height:40rpx;
+  line-height: 40rpx;
+  font-size:28rpx;
+}
+
+.disease{
+  display: flex;
+  flex-direction: row;
+  margin-top:36rpx;
+  margin-bottom:18rpx;
+}
+.disease .weight{
+  width:44px;
+  height:44px;
+  position:relative;
+  top:18rpx;
+}
+
+.disease .weight .text{
+  height:44px;
+  width:44px;
+  line-height: 44px;
+  font-size:10px;
+  text-align: center;
+  
+}
+.disease .describe{
+  width:580rpx;
+  padding-left:35rpx;
+}
+.disease .describe .name{
+  height:48rpx;
+  line-height:48rpx;
+  margin-bottom:8rpx;
+  color:rgba(42,63,84,1);
+  font-size:34rpx;
+}
+.disease .describe .text{
+  height:66rpx;
+  width:480rpx;
+  line-height: 33rpx;
+  font-size:24rpx;
+  color:rgba(42,63,84,.5);
+  overflow:hidden;
+}
+.disease .icon{
+  height:126rpx;
+  line-height: 126rpx;
+  color:rgba(42,63,84,.5);
+}
+
+
+
+.circle-box {
+  text-align: center;
+  margin-top: 10vw;
+}
+
+.circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.draw_btn {
+  width: 35vw;
+  position: absolute;
+  top: 33vw;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border: 1px #000 solid;
+  border-radius: 5vw;
+}

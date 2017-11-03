@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container ">
+    <import src="../../component/restart/restart.wxml" />
+    <template is="restart"></template>
+    
+    <view class="gradient"></view>
+    <block wx:for="{{question}}" wx:for-item="items" wx:for-index='index' wx:key="value">
+        <import src="../../component/dialogue/dialogue.wxml" />
+        <template is="dialogue" data="{{items,labItem,idx,index}}"></template>
+
+    </block>
+
+</view>

@@ -1,0 +1,6 @@
+<template name='restart'>
+    <view class="restart" bindtap="restartAsk">
+        <view>重新</view>
+        <view>问诊</view>
+    </view>
+</template>

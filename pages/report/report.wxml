@@ -1,0 +1,44 @@
+<!--report.wxml-->
+<view class="container pad40">
+
+  <import src="../../component/restart/restart.wxml" />
+  <template is="restart"></template>
+  <view class="header">
+    <view class="robot">
+      <image class="robot-photo" src="../../images/robot.jpg" background-size="cover"></image>
+    </view>
+    <view class="text">
+      根据您的主观描述，以及追问结果，
+    </view>
+    <view class="text">
+      您可能患有以下疾病：
+    </view>
+  </view>
+
+  <view wx:for="{{report}}" wx:key="id">
+    <template is="disease" data="{{...item}}"></template>
+  </view>
+
+
+</view>
+
+<template name="disease">
+  <view class="disease" data-id="{{id}}" bindtap="clickDisease">
+    <view class="weight">
+
+      <canvas class="circle" style="z-index: -5; width:50px; height:50px;" canvas-id="canvasCircle{{id}}">
+      </canvas>
+      <canvas class="circle" style="width:50px; height:50px;" canvas-id="canvasArcCir{{id}}">
+      </canvas>
+
+      <view class="text">
+        {{weight}}%
+      </view>
+    </view>
+    <view class="describe">
+      <view class="name">{{name}}</view>
+      <view class="text">{{describe}}</view>
+    </view>
+    <text class="icon icomoon icon-unfolded"></text>
+  </view>
+</template>

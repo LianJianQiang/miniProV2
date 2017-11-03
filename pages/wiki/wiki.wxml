@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container pad40">
+  <import src="../../component/restart/restart.wxml" />
+  <template is="restart"></template>
+
+  <view wx:for="{{wiki}}" wx:key="{{index}}">
+    <template is="list" data="{{...item,idx:index}}"></template>
+  </view>
+
+</view>
+
+<template name='list'>
+  <view class="list">
+    <view class="title" bindtap="clickTitle" data-idx="{{idx}}">
+      <view class="text">{{title}}</view>
+      <view class="icon">
+        <text class="icon icomoon {{show?'icon-shang':'icon-xia'}}"></text>
+      </view>
+    </view>
+    <view class="describe" style="height:{{show?'auto':'0'}};padding-bottom:{{show?'20rpx':'0'}}">
+      {{describe}}
+    </view>
+  </view>
+</template>

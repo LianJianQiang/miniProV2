@@ -1,0 +1,73 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position:absolute;
+  color:#333;
+} 
+.com-padding{
+  padding:0 10rpx;
+}
+
+.fll {
+    float: left;
+}
+
+.flr {
+    float: right;
+}
+
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+
+/*字体图标*/
+@font-face {
+	font-family: 'icomoon';
+	src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOAAA0AAAAACAQAAAMsAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACCXhEICoRkg14LFgABNgIkAyAEIAWDGwdtG38GyK4G7IY8Q2Qcw6rWj/RCZ6yhE//DYfHwtV9v53b3vKEgkQ47gvJMjkDIsIv+FaG4fCTBrp7j93M3tYxJmiZGNG3T5O//iSpuScQTleSlEhoRn8BV5G+b3qRn2jhBKr/5G23HkfK//+n/v5/84+rO04VmkM2oir4+4BVW4gCnAxnOhlGl8xaZRrlu0N0czB9+OxsKAR/HrbUD8GnLe+quA90wAEhCaAoFCTm/JsxCjfSY+I6boJD4Zm40qbqil5KrEL4UUleHVRmxgQDyoxCQXcMSiJ1Y4EYiWwa0NCRJGPWl/A+IaL+k80CKLLQAhExURAYiIdH/maAA+wjRoSdogX5AE6+Ar4ACCARFSdgzVBwyZnT/IUNixaczq3ww7pj54MaPtgNf2aeJ3YGW1uD0xXXBjsbnQWYh/vgLXHglQYOAjC3t0sS+CoEbGFe9/Ub2B6HW+Bdy4dvdnvitSr/jrMeyv1AfGYoYFzDTGm9WMZzje3KUDRw72o7jexun7IVVNi/uNF12Q48nDOF5+HBrpw344LDldQQALI96+3IExNA+Uxo+mG76PAdYreORqakbYFkVXd13Ks8C0re9pCO6t/KgGDgwBlU9ehHDFzHbm8IuV2Wnw4rfTX8lLgxqu9d9/o1ujXa92++PRLSa7g2/byTtYEGs+ftyVnvRdZih491/XVKvQuGVdnVZek+P9DBV8qNBXrUX3oAZTAfSJhCCN15MZZ7FuhaZmqrDsuoE63KEL4LtM86cxWzfPAjg3JOa2l28Zf/TWcUC705HgdyFhgSCRVmEAgrnhqqQR2y7n4TCakB8thoBLQsQQaJfQw8vIUCo64UAkrpJCCCrW4UAirqdCKCm7QQCqNTdgwAtQ3zIojSFHkREgkFEhllEgU38mgH0/EoPVzpumWcTjjBxc3Jzc4Ej+9wHcn2AzRBckIOBD3z4lg00zbBIezvEx88a3UhGTAoeiTnKZszq5tqQnDagEQ5xQXwMAhCzRkZRjYYgjGExeA9PukPgIZP7lxHzAEj00VtEkiLLUaIWVdSjUR1yRD0WGe2oyyoFJo/X1ymdZcMwB+Y65wE=) format('woff2'),
+		url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAVoAA0AAAAACAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAFTAAAABoAAAAcfsxic0dERUYAAAUwAAAAHAAAAB4AJwAQT1MvMgAAAZAAAAA/AAAAYA8TBeVjbWFwAAAB7AAAAFUAAAFeF1fZ5Gdhc3AAAAUoAAAACAAAAAgAAAAQZ2x5ZgAAAlwAAAGvAAACZIbE+XJoZWFkAAABMAAAACwAAAA2DcYNyWhoZWEAAAFcAAAAHAAAACQHwgPHaG10eAAAAdAAAAAaAAAAIA02AIJsb2NhAAACRAAAABYAAAAWAmYBpm1heHAAAAF4AAAAFwAAACAADQA4bmFtZQAABAwAAADcAAABm/pYTdhwb3N0AAAE6AAAAD8AAABtRVOHlHicY2BkAIO+ldI18fw2Xxm4WcD8q8FPliHo/wdYGJgPALkcDEwgUQA8HgtyeJxjYGRgYD7w/wADAwsDCABJRgZUwAYATFgCk3icY2BkYGDgYjBjYGIAAQiJBAAG4wBGAHicY2Bm3sY4gYGVgYFpJtMZBgaGfgjN+JrBmJGTARUwCqAJMDgwML5kYT7w/wCDAzMQg9QgySowMAIAXPILAwB4nGNhgADGUAjNBMQsDAyOYLGHDI4ADdwBxQAAeJxjYGBgZoBgGQZGBhCIAPIYwXwWBhsgzcXAwcAEhIwMCi9Z/v/9/x+sSuElA4T9/4k4K1gHFwMMMILMY2QDYmaoABOQYGJABUA7WBiGNwAAKDwNIwAAAAAAAAAACAAIABAAGABKAIQA0gECATIAAHichZG9TgJBEMd39vBul41nFm89bIh3RC4W4tcBoSEhNJQ2JlD7FSsj2tiZGGKnsVWeQX0EHgEfwScwGC1McHH2lEQqt5nszGR+M/8/ATJ5lJAqJf//6+TRGtBnskgIeLZjhxEHF6IiVKAGW5sLPuRAWQPOZFHqO93DIC0JN0yJdJbBtcPAER6XEvb0BVawDk+cMa47QglDMkyVItY+CfATFyIohI7t+RCEtvIWtgLATw5ZZYMspYjg+lauu5kMuKOvbBBkLVsPpXS8tFAMjrmA/qzicCSlXJ/TH6Hvh/oVuYxzU1azyXXjPjL7ZImUCFmOcHBcpPnQpcrLUcP6RZbjCOIaZnJYcbGjSEvW69vKWuO012rfnzUaZ/ftZrc85J5I7hxdbux06vXOzsYkBsNytzlpbfVOG2srb2YXI8X730YTUQJ4GX/ibldG85mwEBXiCgcUvAaJ2OgCOpCn1SlZVyU8mKG6g4s4jJvhB7CHeawmSeGj5jab9nQ+xhM3fY7K4sHJYCQirVTnLINDD2H3x1J9wlRaZBHgMHqesHUPfi3V28ZSuEZLvwEqqWtpAHicdc6xasJQGMXxfzRatCCdSul0R6eg4AN0KnVw6SAdG+MlBPReiBF07yN07DP0YXwiT8K3JnDD7zs35yPAjH8S2ifhgSfzQJ6bh/KbOZW/zCMeuZjHyn/NU165qZWkEyWzbkPrgfxiHsoLcyp/mEc8820eK/8xT1nxR0VB5KgTCVAV8Rij8Imn5MyBnFqjL8+HXOj7vi/fak/NSfdt7liS6S/Z+vpUxeCW2aK/+97NjVqltoRuU67Zs1e246r3uuturJupFEPjSh98nTd+73ZXty7iRvsy7uXbPkN4nGNgYsAPuBgYGJkYmBiZGZgZWRhZGdkY2Rk52NJzKgsyDNlL8zINDAzAtKulgQGUhvGNoLQxlDYBAMogD6oAAAEAAf//AA94nGNgZGBg4AFiMSBmYmAEQk4gZgHzGAAEAQA4eJxjYGBgZACCKyoz1UD01eAny2A0AEO/Bx0AAA==) format('woff'),
+		url('icomoon.ttf') format('truetype'),
+		url('icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shang:before {
+  content: "\e900";
+}
+.icon-putaway:before {
+  content: "\e901";
+}
+.icon-search:before {
+  content: "\e902";
+}
+.icon-unfolded:before {
+  content: "\e903";
+}
+.icon-xia:before {
+  content: "\e904";
+}

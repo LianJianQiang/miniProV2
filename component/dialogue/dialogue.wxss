@@ -1,0 +1,135 @@
+/*头像*/
+
+.robot-photo {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+/*问题*/
+
+.stem {
+  /*width: 100%;
+  height: 48px;*/
+  line-height: 26px;
+  color: #000;
+  font-size: 34rpx;
+  margin-top: 40rpx;
+  margin-bottom: 30rpx;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+}
+
+.options {
+  padding-left: 52rpx;
+}
+
+.options label {
+  min-width: 40%;
+}
+
+.options .radio, .options .checkbox {
+  display: inline-block;
+  margin-bottom: 40rpx;
+}
+
+.options input {
+  width: 80%;
+  height: 70rpx;
+  border-radius: 10rpx;
+  padding-left: 0.5em;
+  font-size: 28rpx;
+  border: 1rpx solid rgba(42, 63, 84, 0.5);
+}
+
+.options .symptom-enter {
+  width: 80%;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 32rpx;
+  color: #3d83b8;
+  text-align: left;
+}
+
+radio, checkbox {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.checkboxBtn, .submitLab {
+  width: 100%;
+  border-radius: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.dialogue {
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  overflow: hidden;
+}
+
+.question-show {
+  opacity: 0;
+  animation: show .6s  ease-in .8s forwards;
+}
+
+.question-hide {
+    opacity: 1;
+    height:auto;
+    animation: hide 0.6s ease-in forwards;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+    height:auto;
+  }
+
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+    height:auto;
+  }
+
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
